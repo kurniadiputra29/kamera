@@ -15,15 +15,12 @@ class CreateKameraTable extends Migration
     {
         Schema::create('kamera', function (Blueprint $table) {
             $table->Increments('id');
-            $table->unsignedInteger('id_pemilik');
             $table->string('NK')->unique();
             $table->string('name');
             $table->string('type');
             $table->integer('jumlah');
             $table->boolean('status');
             $table->timestamps();
-
-            $table->foreign('id_pemilik')->references('id')->on('pemilik')->onDelete('cascade');
         });
     }
 
