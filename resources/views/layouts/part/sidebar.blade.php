@@ -29,65 +29,45 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
+            <i class=""></i>
             <span>Dashboard</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
-            <span>Owner</span>
+            <i class=""></i>
+            <span>Barang</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
-            <span>Item</span>
+            <i class=""></i>
+            <span>Penyusutan</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
-            <span>Report</span>
+            <i class=""></i>
+            <span>Penyewaan</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
-            <span>Transaction</span>
-          </a>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i>
-            <span>Renter</span>
-          </a>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i>
+            <i class=""></i>
             <span>User</span>
           </a>
         </li>
 
-        <li class="treeview menu-open">
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i> <span>Mentahan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class=""></i>
+            <span>Laporan</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Option 1</a></li>
-            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Option 2</a></li>
-          </ul>
-        </li>
+        </li> 
 
       </ul>
     </section>

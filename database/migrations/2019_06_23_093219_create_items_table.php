@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKameraTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class CreateKameraTable extends Migration
      */
     public function up()
     {
-        Schema::create('kamera', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('NK')->unique();
+            $table->string('code')->unique();
             $table->string('name');
+            $table->unsignedInteger('category_id');
             $table->string('type');
-            $table->integer('jumlah');
+            $table->integer('price');
             $table->boolean('status');
+            $table->string('note')->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -31,6 +35,6 @@ class CreateKameraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kamera');
+        Schema::dropIfExists('items');
     }
 }

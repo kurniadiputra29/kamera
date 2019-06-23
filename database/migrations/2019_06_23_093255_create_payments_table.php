@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnggotaTable extends Migration
+class CreatePaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateAnggotaTable extends Migration
      */
     public function up()
     {
-        Schema::create('anggota', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('NA')->unique();
             $table->string('name');
-            $table->string('penanggung_jwb');
-            $table->string('alamat');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateAnggotaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anggota');
+        Schema::dropIfExists('payments');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDetailTable extends Migration
+class CreateReturnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreateDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail', function (Blueprint $table) {
+        Schema::create('returns', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('NK');
-            $table->date('tahun_pembuatan');
-            $table->date('tanggal_terima');
-            $table->integer('harga_pembelian');
+            $table->unsignedInteger('rental_id');
+            $table->string('id_card');
+            $table->string('renter');
+            $table->string('item_code');
             $table->boolean('status');
+            $table->string('note');
             $table->timestamps();
 
-            $table->foreign('NK')->references('NK')->on('kamera')->onDeletes('cascade');
+            $table->foreign('rental_id')->references('id')->on('rentals')->onDelete('cascade');
         });
     }
 
@@ -33,6 +34,6 @@ class CreateDetailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail');
+        Schema::dropIfExists('returns');
     }
 }
