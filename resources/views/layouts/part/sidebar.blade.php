@@ -37,21 +37,35 @@
         <li class="treeview">
           <a href="#">
             <i class=""></i>
-            <span>Barang</span>
+            <span>Category</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
             <i class=""></i>
-            <span>Penyusutan</span>
+            <span>Item</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
             <i class=""></i>
-            <span>Penyewaan</span>
+            <span>Rental</span>
+          </a>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class=""></i>
+            <span>Return</span>
+          </a>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class=""></i>
+            <span>Payment</span>
           </a>
         </li>
 
@@ -61,13 +75,6 @@
             <span>User</span>
           </a>
         </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class=""></i>
-            <span>Laporan</span>
-          </a>
-        </li> 
 
       </ul>
     </section>
