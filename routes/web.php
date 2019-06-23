@@ -17,3 +17,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+
+Route::prefix('admin')->group(function () {
+	Route::resource('/payments', 'PaymentController');
+
+	Route::get('json/payment', 'JsonController@payment')->name('json.payment');
+});
