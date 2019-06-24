@@ -30,6 +30,7 @@
 						<th>Renter</th>
 						<th>Address</th>
 						<th>Phone</th>
+						<th>Item Code</th>
 						<th style="text-align: center;">Action</th>
 					</tr>
 				</thead>
@@ -50,6 +51,7 @@
 						<td>{{ $rental->renter }}</td>
 						<td>{{ $rental->address }}</td>
 						<td>{{ $rental->phone }}</td>
+						<td>{{ $rental->item_code }}</td>
 						<td>
 							<form action="{{route('rentals.destroy', $rental->id)}}" method="post">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$rental->id}}">Detail</button>
@@ -114,7 +116,7 @@
 															<tr>
 																<td>{{ $rental->qty }}</td>
 																<td>{{ $rental->price_total }}</td>
-																<td>{{ $rental->period }}</td>
+																<td>{{ $rental->periode }}</td>
 																<td>{{ $rental->deadline }}</td>
 															</tr>
 														</tbody>

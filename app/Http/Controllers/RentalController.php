@@ -20,7 +20,8 @@ class RentalController extends Controller
         $users = User::all();
         $payments = Payment::all();
         $rentals = Rental::all();
-        return view('admin.rentals.index', compact('users', 'payments', 'rentals'));
+        $items = Item::all();
+        return view('admin.rentals.index', compact('users', 'payments', 'rentals', 'items'));
     }
 
     /**
@@ -45,7 +46,8 @@ class RentalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Rental::create($request->all());
+        return redirect('admin/rentals');
     }
 
     /**
@@ -67,7 +69,11 @@ class RentalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::all();
+        $payments = Payment::all();
+        $rentals = Rental::find($id);
+        $items = Item::all();
+        return view('admin.rentals.edit', compact('users', 'payments', 'rentals', 'items'));
     }
 
     /**
@@ -79,7 +85,8 @@ class RentalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Rental::find($id)->update($request->all());
+        return redirect('admin/rentals');
     }
 
     /**
@@ -90,6 +97,7 @@ class RentalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Rental::find($id)->delete();
+        return redirect('admin/rentals');
     }
 }
