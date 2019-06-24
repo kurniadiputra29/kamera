@@ -53,3 +53,12 @@ Route::prefix('admin')->group(function (){
 	Route::get('trash', 'ItemController@trash')->name('item.trash');
 	Route::delete('trash/{id}', 'ItemController@forceDelete')->name('item.forceDelete');
 });
+
+Route::prefix('admin')->group(function (){
+	Route::get('return', 'ReturnController@index')->name('return.index');
+	Route::get('return/create', 'ReturnController@create')->name('return.create');
+	Route::post('return', 'ReturnController@store')->name('return.store');
+	Route::get('return/{id}/edit', 'ReturnController@edit')->name('return.edit');
+	Route::put('return/{id}', 'ReturnController@update')->name('return.update');
+	Route::delete('return/{id}', 'ReturnController@destroy')->name('return.destroy');
+});

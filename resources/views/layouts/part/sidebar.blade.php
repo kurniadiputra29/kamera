@@ -77,8 +77,8 @@
          <a href="#"><i class="fa fa-shopping-cart"></i> <span>Rental</span></a>
        </li>
 
-       <li class="{{ Request::is('admin/returns') || Request::is('admin/returns/*') ? 'active' : '' }}">
-         <a href="#"><i class="fa fa-undo"></i> <span>Returns</span></a>
+       <li class="{{ Request::is('admin/return') || Request::is('admin/return/*') ? 'active' : '' }}">
+         <a href="{{route('return.index')}}"><i class="fa fa-undo"></i> <span>Returns</span></a>
        </li>
 
        <li class="{{ Request::is('admin/payments') || Request::is('admin/payments/*') ? 'active' : '' }}">
