@@ -37,3 +37,11 @@ Route::prefix('admin')->group(function () {
 
 	Route::get('json/payment', 'JsonController@payment')->name('json.payment');
 });
+
+Route::prefix('admin')->group(function () {
+
+  Route::get('/categories/data', 'CategoryController@data')->name('categories.data');
+
+  Route::resource('/categories', 'CategoryController');
+
+});

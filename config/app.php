@@ -162,10 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        Yajra\DataTables\DataTablesServiceProvider::class,
-        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
-
-
         /*
          * Package Service Providers...
          */
@@ -180,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -233,9 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-
-        'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
-
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
