@@ -29,49 +29,48 @@
 
         <li class="treeview">
           <a href="#">
-            <i class=""></i>
+            <i class="fa fa-dashboard"></i>
             <span>Dashboard</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class=""></i>
-            <span>Category</span>
+            <i class="fa fa-folder-o"></i> <span>Inventory</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('categories.index') }}"><i class="fa fa-circle-o"></i> Category</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Item</a></li>
+          </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class=""></i>
-            <span>Item</span>
-          </a>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class=""></i>
+            <i class="fa fa-file-text-o"></i>
             <span>Rental</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class=""></i>
+            <i class="fa fa-history"></i>
             <span>Return</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class=""></i>
+            <i class="fa fa-cc-visa "></i>
             <span>Payment</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class=""></i>
+            <i class="fa fa-user "></i>
             <span>User</span>
           </a>
         </li>

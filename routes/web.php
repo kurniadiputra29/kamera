@@ -17,3 +17,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+
+Route::prefix('admin')->group(function () {
+
+  Route::get('/categories/data', 'CategoryController@data')->name('categories.data');
+
+  Route::resource('/categories', 'CategoryController');
+
+});
