@@ -34,14 +34,22 @@ Route::prefix('admin')->group(function (){
 
 Route::prefix('admin')->group(function () {
 	Route::resource('/payments', 'PaymentController');
-
 	Route::get('json/payment', 'JsonController@payment')->name('json.payment');
 });
 
 Route::prefix('admin')->group(function () {
-
   Route::get('/categories/data', 'CategoryController@data')->name('categories.data');
-
   Route::resource('/categories', 'CategoryController');
 
+});
+
+Route::prefix('admin')->group(function (){
+	Route::get('item', 'ItemController@index')->name('item.index');
+	Route::get('item/create', 'ItemController@create')->name('item.create');
+	Route::post('item', 'ItemController@store')->name('item.store');
+	Route::get('item/{id}/edit', 'ItemController@edit')->name('item.edit');
+	Route::put('item/{id}', 'ItemController@update')->name('item.update');
+	Route::delete('item/{id}', 'ItemController@destroy')->name('item.destroy');
+	Route::get('trash', 'ItemController@trash')->name('item.trash');
+	Route::delete('trash/{id}', 'ItemController@forceDelete')->name('item.forceDelete');
 });

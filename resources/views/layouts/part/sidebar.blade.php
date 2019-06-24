@@ -67,8 +67,8 @@
            <li class="{{ Request::is('admin/categories') || Request::is('admin/categories/*') ? 'active' : '' }}">
              <a href="{{ route('categories.index') }}"><i class="fa fa-circle-o"></i> Categories</a>
            </li>
-           <li class="{{ Request::is('admin/products') || Request::is('admin/products/*') ? 'active' : '' }}">
-             <a href="#"><i class="fa fa-circle-o"></i> Items</a>
+           <li class="{{ Request::is('admin/item') || Request::is('admin/item/*') ? 'active' : '' }}">
+             <a href="{{route('item.index')}}"><i class="fa fa-circle-o"></i> Items</a>
            </li>
          </ul>
        </li>
