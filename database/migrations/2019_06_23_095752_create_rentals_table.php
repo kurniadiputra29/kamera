@@ -15,7 +15,7 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('id_card');
+            $table->string('id_card')->unique();
             $table->string('renter');
             $table->string('address');
             $table->string('phone');

@@ -34,6 +34,10 @@ Route::prefix('admin')->group(function (){
 
 Route::prefix('admin')->group(function () {
 	Route::resource('/payments', 'PaymentController');
+
+	Route::resource('/rentals', 'RentalController');
+
+
 	Route::get('json/payment', 'JsonController@payment')->name('json.payment');
 });
 

@@ -24,67 +24,52 @@
 		</ul>
 	</div>
 	@endif
-	<form class="form-horizontal" action="{{ route('item.update', $data2->id) }}" method="post">
+	<form class="form-horizontal" action="{{ route('return.update', $returns->id) }}" method="post">
 		@csrf
 		@method('PUT')
 		<div class="box-body">
 			<div class="form-group">
-				<label for="code" class="col-sm-2 control-label">Code</label>
-				<div class="col-sm-10">
-					<input type="text" name="code" class="form-control" id="code" placeholder="Code" value="{{ $data2->code }}">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="name" class="col-sm-2 control-label">Name</label>
-				<div class="col-sm-10">
-					<input type="text" name="name" class="form-control" id="name" placeholder="Name" value="{{ $data2->name }}">
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label">Category</label>
+				<label class="col-sm-2 control-label">Rental</label>
 				<div class="col-sm-10">
 					<select class="form-control" name="category_id" >
-						<option class="col-sm-10" value="">~~Pilih Category~~</option>
-						@foreach($categories as $category)
-						<option class="col-sm-10" value="{{$category->id}}" {{$data2->category_id == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
+						<option class="col-sm-10" value="">~~Pilih Rental~~</option>
+						@foreach($rentals as $rental)
+						<option class="col-sm-10" value="{{$rental->id}}" {{$returns->rental_id == $rental->id ? 'selected' : ''}}>{{$returns->rental_id}}</option>
 						@endforeach
 					</select>
 				</div>
 			</div>
-
-
 			<div class="form-group">
-				<label for="type" class="col-sm-2 control-label">Type</label>
+				<label class="col-sm-2 control-label">Rental</label>
 				<div class="col-sm-10">
-					<input type="text" name="type" class="form-control" id="type" placeholder="Type" value="{{ $data2->type }}">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="price" class="col-sm-2 control-label">Price</label>
-				<div class="col-sm-10">
-					<input type="text" name="price" class="form-control" id="price" placeholder="10000" value="{{ $data2->price }}">
+					<select class="form-control" name="category_id" >
+						<option class="col-sm-10" value="">~~Pilih Rental~~</option>
+						@foreach($rentals as $rental)
+						<option class="col-sm-10" value="{{$rental->id_card}}" {{$returns->id_card == $rental->id_card ? 'selected' : ''}}>{{$returns->id_card}}</option>
+						@endforeach
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="status" class="col-sm-2 control-label">Status</label>
 				<div class="col-sm-10 radio">
 					<label>
-						<input type="radio" name="status" id="status" value="1" {{($data2->status)?'':'checked'}}>Ada
+						<input type="radio" name="status" id="status" value="1" {{($returns->status)?'checked':''}}>Normal
 					</label>
 					<br>
 					<label>
-						<input type="radio" name="status" id="status" value="0" {{($data2->status)?'':'checked'}}>Tidak Ada
+						<input type="radio" name="status" id="status" value="0" {{($returns->status)?'':'checked'}}>Kendala
 					</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="note" class="col-sm-2 control-label">Note</label>
 				<div class="col-sm-10" style="margin-top: 10px;">
-					<textarea name="note" class="form-control" rows="3" placeholder="Enter ..." id="note">{{ $data2->note }}</textarea>
+					<textarea name="note" class="form-control" rows="3" placeholder="Enter ..." id="note">{{ $returns->note }}</textarea>
 				</div>
 			</div>
 			<div class="box-footer">
-				<a href="{{route('item.index')}}" class="btn btn-default">Cancel</a>
+				<a href="{{route('return.index')}}" class="btn btn-default">Cancel</a>
 				<button type="submit" class="btn btn-info pull-right">Submit</button>
 			</div>
 		</div>

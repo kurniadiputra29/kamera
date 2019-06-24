@@ -23,7 +23,7 @@
     </ul>
   </div>
   @endif
-  <form class="form-horizontal" action="{{route('item.store')}}" method="post">
+  <form class="form-horizontal" action="{{route('return.store')}}" method="post">
     @csrf
     <div class="box-body">
       <div class="form-group">
@@ -32,7 +32,18 @@
           <select class="form-control" name="rental_id" >
             <option class="col-sm-10" value="">~~Pilih Rentals~~</option>
             @foreach($data as $row)
-            <option class="col-sm-10" value="{{$row->id}}">{{$row->name}}</option>
+            <option class="col-sm-10" value="{{$row->id}}">{{$row->id_card}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Rentals</label>
+        <div class="col-sm-10">
+          <select class="form-control" name="id_card" >
+            <option class="col-sm-10" value="">~~Pilih Rentals~~</option>
+            @foreach($data as $row)
+            <option class="col-sm-10" value="{{$row->id_card}}">{{$row->id_card}}</option>
             @endforeach
           </select>
         </div>
@@ -56,7 +67,7 @@
         </div>
       </div>
       <div class="box-footer">
-        <a href="{{route('item.index')}}" class="btn btn-default">Cancel</a>
+        <a href="{{route('return.index')}}" class="btn btn-default">Cancel</a>
         <button type="submit" class="btn btn-info pull-right">Submit</button>
       </div>
     </div>

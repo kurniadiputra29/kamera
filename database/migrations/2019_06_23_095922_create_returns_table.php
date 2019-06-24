@@ -17,8 +17,6 @@ class CreateReturnsTable extends Migration
             $table->Increments('id');
             $table->unsignedInteger('rental_id');
             $table->string('id_card');
-            $table->string('renter');
-            $table->string('item_code');
             $table->boolean('status');
             $table->string('note');
             $table->timestamps();

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Returns;
+use App\Model\User;
+use App\Model\Payment;
 use App\Model\Rental;
+use App\Model\Item;
 
-class ReturnController extends Controller
+class RentalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,11 @@ class ReturnController extends Controller
      */
     public function index()
     {
-        $data = Returns::orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.returns.index', compact('data'));
+        $users = User::all();
+        $payments = Payment::all();
+        $rentals = Rental::all();
+        $items = Item::all();
+        return view('admin.rentals.index', compact('users', 'payments', 'rentals', 'items'));
     }
 
     /**
@@ -26,8 +31,11 @@ class ReturnController extends Controller
      */
     public function create()
     {
-        $data = Rental::all();
-        return view('admin.returns.create', compact('data'));
+        $users = User::all();
+        $payments = Payment::all();
+        $rentals = Rental::all();
+        $items = Item::all();
+        return view('admin.rentals.create', compact('users', 'payments', 'rentals', 'items'));
     }
 
     /**
@@ -38,8 +46,8 @@ class ReturnController extends Controller
      */
     public function store(Request $request)
     {
-        Returns::create($request->all());
-        return redirect('/admin/return')->with('Success', 'Data anda telah berhasil di input !');
+        Rental::create($request->all());
+        return redirect('admin/rentals');
     }
 
     /**
@@ -61,9 +69,11 @@ class ReturnController extends Controller
      */
     public function edit($id)
     {
-        $returns           = Returns::find($id);
-        $rentals       = Rental::all();
-        return view('admin.returns.edit', compact('returns', 'rentals'));
+        $users = User::all();
+        $payments = Payment::all();
+        $rentals = Rental::find($id);
+        $items = Item::all();
+        return view('admin.rentals.edit', compact('users', 'payments', 'rentals', 'items'));
     }
 
     /**
@@ -75,9 +85,8 @@ class ReturnController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Returns::find($id);
-        $data->update($request->all());
-        return redirect('/admin/return')->with('Success', 'Data anda telah berhasil di edit !');
+        Rental::find($id)->update($request->all());
+        return redirect('admin/rentals');
     }
 
     /**
@@ -88,7 +97,7 @@ class ReturnController extends Controller
      */
     public function destroy($id)
     {
-        Returns::find($id)->delete();
-        return redirect('/admin/return');
+        Rental::find($id)->delete();
+        return redirect('admin/rentals');
     }
 }

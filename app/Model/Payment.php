@@ -9,10 +9,10 @@ class Payment extends Model
 	protected $table = 'payments';
 
 	protected $fillable = [
-		'name'
+		'name', 'created_at', 'update_at'
 	];
 
-	public function order()
+	public function rental()
 	{
 		return $this->hasMany(Rental::class);
 	}
