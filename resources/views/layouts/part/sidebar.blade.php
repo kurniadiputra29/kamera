@@ -74,7 +74,7 @@
        </li>
 
        <li class="{{ Request::is('admin/rentals') || Request::is('admin/rentals/*') ? 'active' : '' }}">
-         <a href="#"><i class="fa fa-shopping-cart"></i> <span>Rental</span></a>
+         <a href="{{ route('rentals.index') }}"><i class="fa fa-shopping-cart"></i> <span>Rental</span></a>
        </li>
 
        <li class="{{ Request::is('admin/returns') || Request::is('admin/returns/*') ? 'active' : '' }}">
