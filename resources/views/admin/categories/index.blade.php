@@ -18,7 +18,7 @@
     <div class="col-xs-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <a href="{{ route('categories.create') }}" class="btn btn-primary"> Create</a>
+          <a href="{{ route('categories.create') }}" class="btn btn-primary pull-right"> Create</a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">

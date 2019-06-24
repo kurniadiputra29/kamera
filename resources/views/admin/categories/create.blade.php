@@ -19,7 +19,6 @@
     <div class="col-xs-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <a href="{{ route('categories.index') }}" class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i> Back</a>
         </div>
 
         <form method="post" action="{{ route('categories.store') }}">
@@ -33,7 +32,8 @@
           <!-- /.box-body -->
 
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Submit</button>
+            <a href="{{ route('categories.index') }}" class="btn btn-danger"><i class="fa fa-undo"></i> Back</a>
+            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-plus-circle"></i> Submit</button>
           </div>
         </form>
       </div>
