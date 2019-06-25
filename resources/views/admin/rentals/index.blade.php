@@ -51,7 +51,7 @@
 						<td>{{ $rental->renter }}</td>
 						<td>{{ $rental->address }}</td>
 						<td>{{ $rental->phone }}</td>
-						<td>{{ $rental->item_code }}</td>
+						<td>{{ $rental->item_code->name }}</td>
 						<td>
 							<form action="{{route('rentals.destroy', $rental->id)}}" method="post">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$rental->id}}">Detail</button>
